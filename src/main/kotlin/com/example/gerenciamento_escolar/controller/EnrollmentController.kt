@@ -23,12 +23,12 @@ class EnrollmentController {
     fun index(): List<Enrollment> = repository.findAll()
 
 
-    @GetMapping(value = ["/courses-enrolled/{idStudent}"])
+    @GetMapping(value = ["/courses-enrollment/{idStudent}"])
     fun getByIdStudent(@PathVariable("idStudent") id: Int): List<Course>? {
         return repository.findByCoursesEnrollment(id)
     }
 
-    @GetMapping(value = ["/students-enrolled/{idCourse}"])
+    @GetMapping(value = ["/students-enrollment/{idCourse}"])
     fun getByIdCourse(@PathVariable("idCourse") id: Int): List<Student>? {
         return repository.findByStudentsEnrollment(id)
     }
